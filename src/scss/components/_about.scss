@@ -1,0 +1,48 @@
+@include component(about) {
+
+    @include part(title) {
+        font-family: var(--primary-font-family);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 2.5rem;
+        text-align: center;
+        text-transform: uppercase;
+        color: var(--primary-color);
+
+    }
+
+    @include part(paragraph) {
+
+        font-family: var(--secondary-font-family);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.79rem;
+        line-height: 180%;
+        text-align: center;
+        letter-spacing: 0.5px;
+        color: var(--primary-color-05);
+
+        margin-block-start: 1em;
+        margin-block-end: 2em;
+    }
+
+    @include part(source) {
+        text-align: center;
+        font-family: var(--secondary-font-family);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 208%;
+        color: var(--primary-color-02);
+
+        @include part(link) {
+            text-decoration: none;
+            font-family: var(--secondary-font-family);
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 25px;
+            color: var(--primary-color-05);
+        }
+    }
+}

@@ -1,0 +1,35 @@
+@include component(tabs) {
+    padding: 0 1.5em;
+
+    border-top: 1px var(--primary-color-02) solid;
+    border-bottom: 1px var(--primary-color-02) solid;
+    
+    mix-blend-mode: normal;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+
+    @include part(link) {
+        font-family: var(--secondary-font-family);
+        font-weight: 700;
+        font-size: .65rem;
+        text-align: center;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        background-color: transparent;
+        color: var(--primary-color-05);
+
+        padding: 2em 0.5em 1.6em 0.5em;
+        border: none;
+        border-bottom: 0.4em transparent solid;
+
+
+        @include option(active) {
+            color: var(--primary-color);
+            border-bottom: 0.4em var(--planet-color) solid;
+        }
+    }
+}

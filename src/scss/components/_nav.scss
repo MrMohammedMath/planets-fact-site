@@ -1,0 +1,83 @@
+@include component(nav) {
+    display: var(--menu-display);
+    flex-direction: column;
+
+    padding-block-start: 1.375em;
+    padding-inline-start: 1.5em;
+    padding-inline-end: 1.5em;
+    border-top: 1px var(--primary-color-02) solid;
+
+    background-color: var(--main-bg);
+
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        border-top: none;
+        border-bottom: 1px var(--primary-color-02) solid;
+
+        padding-block-start: 2.4375em;
+        padding-block-end: 1.6875em;
+        // padding-inline-start: 3.1875em;
+        // padding-inline-end: 3.1875em;
+    }
+
+    @include part(link) {
+        display: flex;
+        align-items: center;
+
+        color: var(--primary-color);
+        text-decoration: none;
+
+        font-family: var(--secondary-font-family);
+        font-weight: 700;
+        font-size: 0.9375rem;
+
+        letter-spacing: 1.36364px;
+        text-transform: uppercase;
+
+        padding: 1.25em 0;
+        border-bottom: 1px var(--primary-color-02) solid;
+
+        &:last-of-type {
+            border-bottom: none;
+        }
+
+        @include tablet {
+            color: var(--primary-color-07);
+            font-weight: 400;
+
+            border-bottom: none;
+            padding: 0;
+            margin-inline-end: 2.0625em;
+
+            &:last-of-type {
+                margin-inline-end: 0;
+            }
+        }
+
+        @include part(circle) {
+            width: 1.25em;
+            height: 1.25em;
+            border-radius: 50%;
+
+            background-color: white;
+
+            margin-inline-end: 1.5625em;
+
+            @include tablet {
+                display: none;
+            }
+        }
+
+        @include part(right-arrow) {
+            margin-inline-start: auto;
+            margin-inline-end: 0.5em;
+
+            opacity: 0.4;
+
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+}

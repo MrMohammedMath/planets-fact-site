@@ -1,1 +1,65 @@
 //  contains variables, resets, mixins, and other similar styles
+
+:root {
+    --primary-color: rgba(255 255 255);
+    --primary-color-02: rgba(255 255 255 / .2);
+    --primary-color-05: rgba(255 255 255 / .5);
+    --primary-color-07: rgba(255 255 255 / .7);
+
+    --planet-color: var(--mercury-color);
+    --mercury-color: hsla(194, 48%, 49%, 1);
+    --venus-color: hsla(33, 82%, 61%, 1);
+    --earth-color: hsla(263, 67%, 51%, 1);
+    --mars-color: hsla(10, 63%, 51%, 1);
+    --jupiter-color: hsla(2, 68%, 53%, 1);
+    --saturn-color: hsla(17, 73%, 46%, 1);
+    --uranus-color: hsla(169, 73%, 44%, 1);
+    --neptune-color: hsla(222, 87%, 56%, 1);
+
+    --nav-mercury-color: hsla(196, 83%, 93%, 1);
+    --nav-venus-color: hsla(39, 88%, 73%, 1);
+    --nav-earth-color: hsla(238, 99%, 66%, 1);
+    --nav-mars-color: hsla(12, 100%, 64%, 1);
+    --nav-jupiter-color: hsla(27, 75%, 70%, 1);
+    --nav-saturn-color: hsla(40, 96%, 70%, 1);
+    --nav-uranus-color: hsla(168, 82%, 67%, 1);
+    --nav-neptune-color: hsla(222, 95%, 63%, 1);
+
+    --main-bg: #070724;
+
+    --primary-font-family: 'Antonio', sans-serif;
+    --secondary-font-family: 'League Spartan', sans-serif;
+
+    // for toggle menu
+    --menu-display: none;
+    --menu-icon-opacity: 1;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@mixin tablet{
+    // 481px 
+    @media screen and (min-width: 30.0625em) {
+        @content;
+    }
+}
+
+@mixin desktop{
+    // 961px
+    @media screen and (min-width: 60.0625em) {
+        @content;
+    }
+}
+
+
+body{
+    background-color: var(--main-bg);
+    background-image: url('../assets/background-stars.svg');
+    background-size: auto;
+    width: 100%;
+    max-width: 100vw;
+}

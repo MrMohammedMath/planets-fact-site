@@ -1,0 +1,25 @@
+@include component(frame) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    z-index: -1;
+
+
+    @include part(img) {
+        z-index: -1;
+    }
+
+    @include part(surface) {
+        display: none;
+        position: absolute;
+        bottom: 3em;
+        z-index: -1;
+        width: 62px;
+
+        @include option(enabled) {
+            display: unset;
+        }
+    }
+}

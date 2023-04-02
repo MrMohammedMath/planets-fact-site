@@ -1,6 +1,14 @@
 //  imports
-@import 'components';
+@import '~csstyle/csstyle';
 @import 'core';
-@import 'layout';
+@import 'components/header';
+@import 'components/tabs';
+@import 'components/nav';
+@import 'components/details';
+@import 'components/characteristics';
+@import 'components/layout';
+@import 'components/frame';
+@import 'components/about';
+
 
 // for more info about scss file structure visit https://www.webdesignerdepot.com/2020/12/2-smartest-ways-to-structure-sass/

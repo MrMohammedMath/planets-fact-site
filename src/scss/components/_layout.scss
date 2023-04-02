@@ -1,0 +1,39 @@
+//  there are the styles for the header, footer, the grid system, etc
+
+
+@mixin padding {
+    padding-inline-start: 1.5em;
+    padding-inline-end: 1.5em;
+}
+
+@include component(layout) {
+    position: relative;
+    min-height: calc(100vh - 68px);
+
+    @include component(tabs) {
+        width: 100%;
+    }
+
+    @include component(nav){
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    @include component(frame){
+        height: 19em;
+    }
+
+    @include component(about){
+        @include padding;
+    }
+
+    @include component(characteristics) {
+        @include padding;
+        width: 100%;
+        margin-block-start: 1.75em;
+        margin-block-end: 2.9375em;
+    }
+}

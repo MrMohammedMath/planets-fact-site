@@ -1,0 +1,47 @@
+@include component(header) {
+
+
+    @include part(content) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-block-start: 1em;
+        padding-block-end: 1em;
+        padding-inline-start: 1.5em;
+        padding-inline-end: 1.5em;
+
+        @include tablet {
+            justify-content: center;
+            padding-block-start: 2em;
+            padding-block-end: 0;
+        }
+
+        @include part(title) {
+            font-family: var(--primary-font-family);
+            font-weight: 400;
+            font-size: 1.75rem;
+
+            line-height: 36px;
+            letter-spacing: -1.05px;
+            text-transform: uppercase;
+
+            @include part(link) {
+                color: var(--primary-color);
+
+                text-decoration: none;
+            }
+        }
+
+        @include part(menu-btn) {
+            background-color: transparent;
+            border: none;
+            opacity: var(--menu-icon-opacity);
+
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+
+
+}
