@@ -2,6 +2,11 @@
     display: flex;
     flex-direction: column;
 
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
     @include part(item) {
         display: flex;
         align-items: center;
@@ -20,6 +25,21 @@
         padding-inline-end: 2.5em;
         margin-block-end: 0.5em;
 
+        @include tablet {
+            flex-direction: column;
+            align-items: flex-start;
+
+            width: 17.08em;
+
+            padding-block-start: 1.67em;
+            padding-block-end: 1.97em;
+            padding-inline-start: 1.56em;
+            padding-inline-end: 0;
+            margin-block-end: 0;
+
+
+        }
+
         @include part(value) {
             font-family: var(--primary-font-family);
             font-style: normal;
@@ -35,6 +55,14 @@
             margin-inline-start: auto;
             padding-block-start: 0.4em;
             padding-block-end: 0.6em;
+
+            @include tablet {
+                margin-inline-start: 0;
+                padding-block-start: 0;
+                padding-block-end: 0;
+                
+                margin-block-start: 0.375em;
+            }
         }
     }
 }

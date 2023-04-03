@@ -18,13 +18,14 @@ export default function Frame(props: { planet: IPlanet | undefined }) {
             break;
     }
 
+    document.documentElement.style.setProperty('--planet-img-width', props.planet?.width as string);
+
     return (
         <div className="frame">
             <img
                 src={host + img?.replace('./', '')}
                 alt=""
-                className="frame.img"
-                width={props.planet?.width} />
+                className="frame.img" />
             <img
                 src={host + props.planet?.images.geology.replace('./', '')}
                 alt=""

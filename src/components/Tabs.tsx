@@ -17,12 +17,14 @@ export default function Tabs(props: { className?: string }) {
                 <NavLink
                     to="structure"
                     className={({ isActive }) => isActive ? "tabs.link --active" : "tabs.link"}>
+                    <span className="tabs.link.extend">Internal&nbsp;</span>
                     Structure
                 </NavLink>
                 <NavLink
                     to="surface"
                     className={({ isActive }) => isActive ? "tabs.link --active" : "tabs.link"}>
                     Surface
+                    <span className="tabs.link.extend">&nbsp;Geology</span>
                 </NavLink>
             </nav>
 

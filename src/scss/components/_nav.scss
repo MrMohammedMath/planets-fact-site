@@ -12,6 +12,7 @@
     @include tablet {
         display: flex;
         flex-direction: row;
+        justify-content: center;
         border-top: none;
         border-bottom: 1px var(--primary-color-02) solid;
 

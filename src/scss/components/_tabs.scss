@@ -1,14 +1,19 @@
 @include component(tabs) {
-    padding: 0 1.5em;
-
-    border-top: 1px var(--primary-color-02) solid;
-    border-bottom: 1px var(--primary-color-02) solid;
-    
-    mix-blend-mode: normal;
+    border-block-start: 1px var(--primary-color-02) solid;
+    border-block-end: 1px var(--primary-color-02) solid;
 
     display: flex;
     justify-content: space-between;
     align-items: stretch;
+
+    @include tablet {
+        flex-direction: column;
+        justify-content: center;
+        align-items: unset;
+
+        border-block-start: none;
+        border-block-end: none;
+    }
 
     @include part(link) {
         font-family: var(--secondary-font-family);
@@ -22,14 +27,93 @@
         background-color: transparent;
         color: var(--primary-color-05);
 
-        padding: 2em 0.5em 1.6em 0.5em;
+        padding-block-start: 2em;
+        padding-block-end: 1.6em;
+        padding-inline-start: 0.5em;
+        padding-inline-end: 0.5em;
+
         border: none;
         border-bottom: 0.4em transparent solid;
 
+        @include tablet {
+            text-align: left;
+            color: var(--primary-color);
+
+            padding-block-start: 0.5em;
+            padding-block-end: 0.4375em;
+            padding-inline-start: 1.25em;
+
+            border: 1px var(--primary-color-05) solid;
+
+            margin-block-end: 1em;
+
+            &:last-of-type {
+                margin-block-end: none;
+            }
+        }
+
+        // index 01, 02, 03
+        &::before {
+            display: none;
+
+            font-family: var(--secondary-font-family);
+            font-weight: 700;
+            font-size: 0.5625rem;
+            line-height: 278%;
+            letter-spacing: 1.92857px;
+            text-transform: uppercase;
+
+            color: var(--primary-color-05);
+
+            margin-inline-end: 0.875em;
+
+            @include tablet {
+                display: unset;
+            }
+        }
+
+        &:nth-of-type(1n) {
+            &::before {
+                content: '01';
+            }
+        }
+
+        &:nth-of-type(2n) {
+            &::before {
+                content: '02';
+            }
+        }
+
+        &:nth-of-type(3n) {
+            &::before {
+                content: '03';
+            }
+        }
+
+        &:hover,
+        &:focus {
+            @include tablet {
+                background-color: var(--tab-foucs-bg);
+            }
+        }
 
         @include option(active) {
             color: var(--primary-color);
-            border-bottom: 0.4em var(--planet-color) solid;
+            border-block-end: 0.4em var(--planet-color) solid;
+
+            @include tablet {
+                border-block-end: none;
+                background-color: var(--planet-color);
+                border: 1px var(--planet-color) solid;
+            }
+        }
+
+        @include part(extend) {
+            display: none;
+
+            @include tablet {
+                display: unset;
+            }
         }
     }
 }

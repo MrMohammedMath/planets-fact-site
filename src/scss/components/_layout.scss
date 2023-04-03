@@ -1,33 +1,80 @@
 //  there are the styles for the header, footer, the grid system, etc
 
+@mixin padding($direction: both, $value: var(--layout-padding-mobile)) {
+    @if $direction ==start {
+        padding-inline-start: $value;
+        padding-inline-end: 0;
+    }
 
-@mixin padding {
-    padding-inline-start: 1.5em;
-    padding-inline-end: 1.5em;
+    @else if $direction ==end {
+        padding-inline-start: 0;
+        padding-inline-end: $value;
+    }
+
+    @else {
+        padding-inline-start: $value;
+        padding-inline-end: $value;
+    }
 }
 
 @include component(layout) {
     position: relative;
     min-height: calc(100vh - 68px);
 
-    @include component(tabs) {
-        width: 100%;
+    @include tablet {
+        display: grid;
+        grid-template-rows: repeat(4, fit-content(100px));
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "nav nav"
+            "frame frame"
+            "about tabs"
+            "characteristics characteristics";
     }
 
-    @include component(nav){
+    @include component(tabs) {
+        @include padding;
+        width: 100%;
+
+        grid-area: tabs;
+
+        @include tablet{
+            @include padding(both, var(--layout-padding-tablet))
+        }
+    }
+
+    @include component(nav) {
         position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
+
+        grid-area: nav;
+
+        @include tablet {
+            position: static;
+        }
     }
 
-    @include component(frame){
+    @include component(frame) {
         height: 19em;
+
+        grid-area: frame;
+
+        @include tablet {
+            height: 28.75em;
+        }
     }
 
-    @include component(about){
+    @include component(about) {
         @include padding;
+
+        grid-area: about;
+
+        @include tablet{
+            @include padding(start, var(--layout-padding-tablet))
+        }
     }
 
     @include component(characteristics) {
@@ -35,5 +82,11 @@
         width: 100%;
         margin-block-start: 1.75em;
         margin-block-end: 2.9375em;
+
+        grid-area: characteristics;
+
+        @include tablet{
+            @include padding(both, var(--layout-padding-tablet))
+        }
     }
 }

@@ -26,6 +26,7 @@
     --nav-neptune-color: hsla(222, 95%, 63%, 1);
 
     --main-bg: #070724;
+    --tab-foucs-bg: rgba(216, 216, 216, 0.2);
 
     --primary-font-family: 'Antonio', sans-serif;
     --secondary-font-family: 'League Spartan', sans-serif;
@@ -33,6 +34,12 @@
     // for toggle menu
     --menu-display: none;
     --menu-icon-opacity: 1;
+
+    --planet-img-width: 111px;
+
+    --layout-padding-mobile: 1.5em;
+    --layout-padding-tablet: 2.43em;
+    --layout-padding-desktop: 1.5em;
 }
 
 * {
@@ -41,14 +48,16 @@
     box-sizing: border-box;
 }
 
-@mixin tablet{
+@mixin tablet {
+
     // 481px 
     @media screen and (min-width: 30.0625em) {
         @content;
     }
 }
 
-@mixin desktop{
+@mixin desktop {
+
     // 961px
     @media screen and (min-width: 60.0625em) {
         @content;
@@ -56,7 +65,7 @@
 }
 
 
-body{
+body {
     background-color: var(--main-bg);
     background-image: url('../assets/background-stars.svg');
     background-size: auto;

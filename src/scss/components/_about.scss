@@ -9,6 +9,10 @@
         text-transform: uppercase;
         color: var(--primary-color);
 
+        @include tablet{
+            font-size: 3rem;
+            text-align: start;
+        }
     }
 
     @include part(paragraph) {
@@ -24,6 +28,11 @@
 
         margin-block-start: 1em;
         margin-block-end: 2em;
+
+        @include tablet{
+            text-align: start;
+            margin-block-start: 1.5em;
+        }
     }
 
     @include part(source) {
@@ -34,6 +43,10 @@
         font-size: 1rem;
         line-height: 208%;
         color: var(--primary-color-02);
+
+        @include tablet{
+            text-align: start;
+        }
 
         @include part(link) {
             text-decoration: none;

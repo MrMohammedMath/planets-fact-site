@@ -9,6 +9,11 @@
 
     @include part(img) {
         z-index: -1;
+        width: var(--planet-img-width);
+
+        @include tablet{
+            width: calc(var(--planet-img-width) * 1.65);
+        }
     }
 
     @include part(surface) {
@@ -17,6 +22,11 @@
         bottom: 3em;
         z-index: -1;
         width: 62px;
+
+        @include tablet{
+            bottom: 3em;
+            width: 103px;
+        }
 
         @include option(enabled) {
             display: unset;
