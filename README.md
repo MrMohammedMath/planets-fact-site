@@ -4,7 +4,7 @@
     <a href="https://www.frontendmentor.io/challenges/planets-fact-site-gazqN8w_f"><strong>Frontend Mentor Challenge</strong></a>
     <br/>
     <br/>
-    <a href="https://profile-card-component-mh.netlify.app/" target="_blank">View Demo</a>
+    <a href="https://planets-mh.vercel.app/" target="_blank">View Demo</a>
     -
     <a href="https://github.com/MrMohammedMath/planets-fact-site/issues" target="_blank">Report Bug</a>
     -
