@@ -5,6 +5,7 @@
     --primary-color-02: rgba(255 255 255 / .2);
     --primary-color-05: rgba(255 255 255 / .5);
     --primary-color-07: rgba(255 255 255 / .7);
+    --primary-color-75: rgba(255 255 255 / .75);
 
     --planet-color: var(--mercury-color);
     --mercury-color: hsla(194, 48%, 49%, 1);
@@ -39,7 +40,7 @@
 
     --layout-padding-mobile: 1.5em;
     --layout-padding-tablet: 2.43em;
-    --layout-padding-desktop: 1.5em;
+    --layout-padding-desktop: 10.3125em;
 }
 
 * {

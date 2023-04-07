@@ -18,8 +18,16 @@
 
         padding-block-start: 2.4375em;
         padding-block-end: 1.6875em;
-        // padding-inline-start: 3.1875em;
-        // padding-inline-end: 3.1875em;
+    }
+
+    @include desktop {
+        border-block-end: none;
+        align-items: stretch;
+
+        padding-block-start: 0;
+        padding-block-end: 0;
+        padding-inline-start: 0;
+        padding-inline-end: 2.5625em;
     }
 
     @include part(link) {
@@ -53,6 +61,22 @@
 
             &:last-of-type {
                 margin-inline-end: 0;
+            }
+        }
+
+        @include desktop {
+            color: var(--primary-color-75);
+            font-weight: 700;
+
+            padding-block-start: 2.0625em;
+            padding-block-end: 1.6875em;
+
+            border-block-start: 3px transparent solid;
+
+            &:hover,
+            &:focus {
+                color: var(--primary-color);
+                border-block-start: 3px var(--planet-color) solid;
             }
         }
 

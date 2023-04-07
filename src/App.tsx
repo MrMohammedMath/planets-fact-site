@@ -11,12 +11,13 @@ export default function App() {
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<Layout />}>
-                    <Route index element={<Navigate to="mercury"/>}/>
+                    <Route index element={<Navigate to="mercury" />} />
                     <Route path=":planet" element={<Tabs />} >
                         <Route index element={<Details />} />
                         <Route path=":tab" element={<Details />} />
                     </Route>
                 </Route>
+                <Route path='*' element={<Navigate to='mercury' />} />
             </Routes>
         </BrowserRouter>
     );

@@ -19,16 +19,25 @@
 
 @include component(layout) {
     position: relative;
-    min-height: calc(100vh - 68px);
 
     @include tablet {
         display: grid;
-        grid-template-rows: repeat(4, fit-content(100px));
+        grid-template-rows: repeat(3, fit-content(20px));
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas:
             "nav nav"
             "frame frame"
             "about tabs"
+            "characteristics characteristics";
+    }
+
+    @include desktop {
+        grid-template-rows: 30.6875em 16.4375em auto;
+        grid-template-columns: 5.388fr 3fr;
+
+        grid-template-areas:
+            "frame about"
+            "frame tabs"
             "characteristics characteristics";
     }
 
@@ -38,8 +47,18 @@
 
         grid-area: tabs;
 
-        @include tablet{
+        @include tablet {
             @include padding(both, var(--layout-padding-tablet))
+        }
+
+        @include desktop {
+            @include padding(start, 0);
+            margin-block-start: 0.8em;
+
+            margin-inline-start: auto;
+            margin-inline-end: 10em;
+
+            width: 22em;
         }
     }
 
@@ -55,6 +74,10 @@
         @include tablet {
             position: static;
         }
+
+        @include desktop {
+            display: none;
+        }
     }
 
     @include component(frame) {
@@ -65,6 +88,13 @@
         @include tablet {
             height: 28.75em;
         }
+
+        @include desktop {
+            padding-inline-start: 3em;
+            height: 50em;
+
+
+        }
     }
 
     @include component(about) {
@@ -72,8 +102,17 @@
 
         grid-area: about;
 
-        @include tablet{
-            @include padding(start, var(--layout-padding-tablet))
+        @include tablet {
+            @include padding(start, var(--layout-padding-tablet));
+        }
+
+        @include desktop {
+            @include padding(start, 0);
+            width: 21.875em;
+            
+            margin-block-start: 8.5em;
+            margin-inline-start: auto;
+            margin-inline-end: 10em;
         }
     }
 
@@ -85,8 +124,13 @@
 
         grid-area: characteristics;
 
-        @include tablet{
+        @include tablet {
             @include padding(both, var(--layout-padding-tablet))
+        }
+
+        @include desktop {
+            @include padding(both, var(--layout-padding-desktop));
+            margin-block-start:0;
         }
     }
 }

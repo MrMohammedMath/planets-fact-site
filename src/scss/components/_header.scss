@@ -16,6 +16,17 @@
             padding-block-end: 0;
         }
 
+        @include desktop{
+            justify-content: space-between;
+            align-items: stretch;
+            padding-block-start: 0;
+            padding-block-end: 0;
+            padding-inline-start: 2em;
+            padding-inline-end: 0;
+
+            border-block-end: 1px var(--primary-color-02) solid;
+        }
+
         @include part(title) {
             font-family: var(--primary-font-family);
             font-weight: 400;
@@ -24,6 +35,10 @@
             line-height: 36px;
             letter-spacing: -1.05px;
             text-transform: uppercase;
+
+            @include desktop{
+                align-self: center;
+            }
 
             @include part(link) {
                 color: var(--primary-color);
@@ -39,6 +54,14 @@
 
             @include tablet {
                 display: none;
+            }
+        }
+
+        @include component(nav){
+            display: none;
+
+            @include desktop{
+                display: flex;
             }
         }
     }

@@ -4,7 +4,7 @@ import { IPlanet } from "../types";
 import { getData } from "../api";
 
 
-export default function Nav(props: { onClick: () => void }) {
+export default function Nav(props: { onClick?: () => void }) {
     const [planets, setPlanets] = useState<string[] | undefined>(undefined);
 
     useEffect(() => {

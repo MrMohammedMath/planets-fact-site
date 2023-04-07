@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { host } from "../App";
+import Nav from "./Nav";
 
 
 export default function Header(props: { menuOnClick: () => void }) {
@@ -21,6 +22,7 @@ export default function Header(props: { menuOnClick: () => void }) {
                         src={host + "assets/icon-hamburger.svg"}
                         alt="" />
                 </button>
+                <Nav/>
             </div>
         </header>
     )

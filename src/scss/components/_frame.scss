@@ -14,6 +14,10 @@
         @include tablet{
             width: calc(var(--planet-img-width) * 1.65);
         }
+
+        @include desktop{
+            width: calc(var(--planet-img-width) * 2.61);
+        }
     }
 
     @include part(surface) {
@@ -26,6 +30,11 @@
         @include tablet{
             bottom: 3em;
             width: 103px;
+        }
+
+        @include desktop{
+            bottom: 8em;
+            width: 163px;
         }
 
         @include option(enabled) {

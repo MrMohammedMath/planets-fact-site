@@ -9,16 +9,19 @@
         text-transform: uppercase;
         color: var(--primary-color);
 
-        @include tablet{
+        @include tablet {
             font-size: 3rem;
             text-align: start;
+        }
+
+        @include desktop {
+            font-size: 5rem;
         }
     }
 
     @include part(paragraph) {
 
         font-family: var(--secondary-font-family);
-        font-style: normal;
         font-weight: 400;
         font-size: 0.79rem;
         line-height: 180%;
@@ -29,9 +32,18 @@
         margin-block-start: 1em;
         margin-block-end: 2em;
 
-        @include tablet{
+        @include tablet {
             text-align: start;
             margin-block-start: 1.5em;
+        }
+
+        @include desktop {
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.5625em;
+            letter-spacing: 0.6px;
+
+            margin-block-end: 1.5em;
         }
     }
 
@@ -44,18 +56,29 @@
         line-height: 208%;
         color: var(--primary-color-02);
 
-        @include tablet{
+        @include tablet {
             text-align: start;
         }
 
+        @include desktop {
+            font-style: normal;
+            font-size: 1.1rem;
+            line-height: 25px;
+        }
+
         @include part(link) {
-            text-decoration: none;
+            // text-decoration: none;
             font-family: var(--secondary-font-family);
             font-style: normal;
             font-weight: 400;
             font-size: 1rem;
             line-height: 25px;
             color: var(--primary-color-05);
+
+            @include desktop{
+                font-weight: 700;
+                font-size: 1.1rem;
+            }
         }
     }
 }
